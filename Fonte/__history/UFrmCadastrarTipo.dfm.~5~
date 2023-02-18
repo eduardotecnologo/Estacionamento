@@ -1,0 +1,56 @@
+inherited FrmCadastroTipo: TFrmCadastroTipo
+  Caption = 'Cadastrar o Tipo'
+  ClientHeight = 218
+  ExplicitHeight = 247
+  PixelsPerInch = 96
+  TextHeight = 19
+  object Label1: TLabel [0]
+    Left = 49
+    Top = 48
+    Width = 56
+    Height = 19
+    Caption = '&C'#243'digo:'
+    FocusControl = dbEditCodigo
+  end
+  object Label2: TLabel [1]
+    Left = 32
+    Top = 88
+    Width = 73
+    Height = 19
+    Caption = '&Descri'#231#227'o:'
+    FocusControl = dbEditDescricao
+  end
+  inherited tlbCadastroCRUD: TToolBar
+    Top = 153
+  end
+  object dbEditCodigo: TDBEdit [3]
+    Left = 111
+    Top = 45
+    Width = 170
+    Height = 27
+    DataSource = DataSourceMain
+    TabOrder = 1
+  end
+  object dbEditDescricao: TDBEdit [4]
+    Left = 111
+    Top = 85
+    Width = 397
+    Height = 27
+    TabOrder = 2
+  end
+  inherited ImgAtiva: TImageList
+    Left = 632
+  end
+  inherited ImgHot: TImageList
+    Left = 632
+    Top = 88
+  end
+  inherited DataSourceMain: TDataSource
+    DataSet = dtmEstacionamento.qryTipo
+    Left = 704
+    Top = 80
+  end
+  inherited ActionListCRUD: TActionList
+    Left = 704
+  end
+end

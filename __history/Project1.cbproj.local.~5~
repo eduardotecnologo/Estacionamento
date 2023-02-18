@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BorlandProject>
+	<Transactions>
+    <Transaction>2022/12/19 19:33:18.000.721,=D:\Git\developer\Embarcadeiro\Project1PCH1.h</Transaction>
+    <Transaction>2022/12/19 19:33:19.000.217,=D:\Git\developer\Embarcadeiro\File1.cpp</Transaction>
+    <Transaction>2022/12/19 19:59:12.000.844,D:\Git\developer\Embarcadeiro\ConvertTenperatura\File1.cpp=D:\Git\developer\Embarcadeiro\File1.cpp</Transaction>
+    <Transaction>2022/12/19 20:41:07.000.862,D:\Git\developer\Embarcadeiro\ConvertTenperatura\Project1PCH1.h=D:\Git\developer\Embarcadeiro\Project1PCH1.h</Transaction>
+    <Transaction>2022/12/19 20:41:25.000.196,D:\Git\developer\Embarcadeiro\Estacionamento\Project1.cbproj=D:\Git\developer\Embarcadeiro\Project1.cbproj</Transaction>
+  </Transactions>
+</BorlandProject>

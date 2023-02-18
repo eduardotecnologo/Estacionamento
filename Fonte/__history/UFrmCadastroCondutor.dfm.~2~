@@ -1,0 +1,22 @@
+inherited FrmCadastroCondutor: TFrmCadastroCondutor
+  Caption = 'Cadastro de Condutor'
+  PixelsPerInch = 96
+  TextHeight = 19
+  inherited ImgAtiva: TImageList
+    Left = 648
+    Top = 8
+  end
+  inherited ImgHot: TImageList
+    Left = 640
+    Top = 80
+  end
+  inherited DataSourceMain: TDataSource
+    DataSet = dtmEstacionamento.qryCondutor
+    Left = 712
+    Top = 64
+  end
+  inherited ActionListCRUD: TActionList
+    Left = 712
+    Top = 8
+  end
+end

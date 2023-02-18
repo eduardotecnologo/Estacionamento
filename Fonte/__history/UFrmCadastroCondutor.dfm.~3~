@@ -1,0 +1,94 @@
+inherited FrmCadastroCondutor: TFrmCadastroCondutor
+  Caption = 'Cadastro de Condutor'
+  ClientHeight = 282
+  ExplicitHeight = 311
+  PixelsPerInch = 96
+  TextHeight = 19
+  object Label1: TLabel [0]
+    Left = 14
+    Top = 25
+    Width = 50
+    Height = 18
+    Caption = 'C'#243'digo'
+    FocusControl = DBEdit1
+  end
+  object Label2: TLabel [1]
+    Left = 22
+    Top = 74
+    Width = 42
+    Height = 19
+    Caption = 'Nome'
+    FocusControl = DBEdit2
+  end
+  object Label3: TLabel [2]
+    Left = 32
+    Top = 126
+    Width = 32
+    Height = 19
+    Caption = 'CNH'
+    FocusControl = DBEdit3
+  end
+  object Label4: TLabel [3]
+    Left = 37
+    Top = 174
+    Width = 27
+    Height = 19
+    Caption = 'CPF'
+  end
+  inherited tlbCadastroCRUD: TToolBar
+    Top = 217
+  end
+  object DBEdit1: TDBEdit [5]
+    Left = 70
+    Top = 22
+    Width = 213
+    Height = 26
+    DataField = 'CON_COD'
+    DataSource = DataSourceMain
+    TabOrder = 1
+  end
+  object DBEdit2: TDBEdit [6]
+    Left = 70
+    Top = 71
+    Width = 507
+    Height = 27
+    DataField = 'CON_NOM'
+    DataSource = DataSourceMain
+    TabOrder = 2
+  end
+  object DBEdit3: TDBEdit [7]
+    Left = 70
+    Top = 121
+    Width = 213
+    Height = 27
+    DataField = 'CON_CNH'
+    DataSource = DataSourceMain
+    TabOrder = 3
+  end
+  object DBEdit4: TDBEdit [8]
+    Left = 70
+    Top = 170
+    Width = 213
+    Height = 27
+    DataField = 'CON_CPF'
+    DataSource = DataSourceMain
+    TabOrder = 4
+  end
+  inherited ImgAtiva: TImageList
+    Left = 648
+    Top = 8
+  end
+  inherited ImgHot: TImageList
+    Left = 640
+    Top = 80
+  end
+  inherited DataSourceMain: TDataSource
+    DataSet = dtmEstacionamento.qryCondutor
+    Left = 712
+    Top = 64
+  end
+  inherited ActionListCRUD: TActionList
+    Left = 712
+    Top = 8
+  end
+end

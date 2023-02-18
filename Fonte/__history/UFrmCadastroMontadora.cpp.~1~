@@ -1,0 +1,17 @@
+//---------------------------------------------------------------------------
+
+#include <vcl.h>
+#pragma hdrstop
+
+#include "UFrmCadastroMontadora.h"
+//---------------------------------------------------------------------------
+#pragma package(smart_init)
+#pragma link "UFrmModeloCadastroCRUD"
+#pragma resource "*.dfm"
+TFrmCadastroMontadoraCRUD1 *FrmCadastroMontadoraCRUD1;
+//---------------------------------------------------------------------------
+__fastcall TFrmCadastroMontadoraCRUD1::TFrmCadastroMontadoraCRUD1(TComponent* Owner)
+    : TFrmModeloCadastroCRUD(Owner)
+{
+}
+//---------------------------------------------------------------------------

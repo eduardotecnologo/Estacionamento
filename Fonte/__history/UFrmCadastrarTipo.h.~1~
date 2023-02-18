@@ -1,0 +1,24 @@
+//---------------------------------------------------------------------------
+
+#ifndef UFrmCadastrarTipoH
+#define UFrmCadastrarTipoH
+//---------------------------------------------------------------------------
+#include <System.Classes.hpp>
+#include <Vcl.Controls.hpp>
+#include <Vcl.StdCtrls.hpp>
+#include <Vcl.Forms.hpp>
+#include "UFrmModeloCadastroCRUD.h"
+#include <Vcl.ComCtrls.hpp>
+#include <Vcl.ToolWin.hpp>
+//---------------------------------------------------------------------------
+class T_FrmCadastroTipo : public TFrmModeloCadastroCRUD
+{
+__published:	// IDE-managed Components
+private:	// User declarations
+public:		// User declarations
+    __fastcall T_FrmCadastroTipo(TComponent* Owner);
+};
+//---------------------------------------------------------------------------
+extern PACKAGE T_FrmCadastroTipo *_FrmCadastroTipo;
+//---------------------------------------------------------------------------
+#endif

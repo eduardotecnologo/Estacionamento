@@ -1,0 +1,24 @@
+//---------------------------------------------------------------------------
+
+#ifndef UFrmCadastroMontadoraH
+#define UFrmCadastroMontadoraH
+//---------------------------------------------------------------------------
+#include <System.Classes.hpp>
+#include <Vcl.Controls.hpp>
+#include <Vcl.StdCtrls.hpp>
+#include <Vcl.Forms.hpp>
+#include "UFrmModeloCadastroCRUD.h"
+#include <Vcl.ComCtrls.hpp>
+#include <Vcl.ToolWin.hpp>
+//---------------------------------------------------------------------------
+class TFrmCadastroMontadoraCRUD1 : public TFrmModeloCadastroCRUD
+{
+__published:	// IDE-managed Components
+private:	// User declarations
+public:		// User declarations
+    __fastcall TFrmCadastroMontadoraCRUD1(TComponent* Owner);
+};
+//---------------------------------------------------------------------------
+extern PACKAGE TFrmCadastroMontadoraCRUD1 *FrmCadastroMontadoraCRUD1;
+//---------------------------------------------------------------------------
+#endif

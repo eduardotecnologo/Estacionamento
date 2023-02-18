@@ -1,0 +1,45 @@
+//---------------------------------------------------------------------------
+
+#include <vcl.h>
+#pragma hdrstop
+
+#include "UFrmPrincipal.h"
+#include "UFrmCadastroCondutor.h"
+#include "UFrmCadastroMontadora.h"
+#include "UFrmCadastroModelo.h"
+//---------------------------------------------------------------------------
+#pragma package(smart_init)
+#pragma resource "*.dfm"
+TfrmPrincipal *frmPrincipal;
+//---------------------------------------------------------------------------
+__fastcall TfrmPrincipal::TfrmPrincipal(TComponent* Owner)
+    : TForm(Owner)
+{
+
+}
+//---------------------------------------------------------------------------
+void __fastcall TfrmPrincipal::EvEncerrarSistema(TObject *Sender)
+{
+    Close();
+}
+//---------------------------------------------------------------------------
+
+
+void __fastcall TfrmPrincipal::EvAtivarCadastroCondutorClick(TObject *Sender)
+{
+    new TFrmCadastroCondutor(this);
+}
+//---------------------------------------------------------------------------
+
+void __fastcall TfrmPrincipal::EvAtivarCadastroMontadora(TObject *Sender)
+{
+   new TFrmCadastroMontadora(this);
+}
+//---------------------------------------------------------------------------
+
+void __fastcall TfrmPrincipal::EvCadastroModelo(TObject *Sender)
+{
+    new TFrmCadastroModelo(this);
+}
+//---------------------------------------------------------------------------
+

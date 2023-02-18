@@ -1,0 +1,8 @@
+inherited FrmCadastroMontadora: TFrmCadastroMontadora
+  Caption = 'Cadastro Montadora'
+  PixelsPerInch = 96
+  TextHeight = 19
+  inherited DataSourceMain: TDataSource
+    DataSet = dtmEstacionamento.qryMontadora
+  end
+end
