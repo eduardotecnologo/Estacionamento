@@ -65,7 +65,7 @@ __published:	// IDE-managed Components
     TSQLTimeStampField *qryTicketTIC_HOR_SAI;
     TBCDField *qryTicketTIC_VAL_PAG;
     TDataSource *dtsConducaoTicketMD;
-	TFDConnection *cnxEstacionamento;
+	TFDConnection *cnxBaseestacionamento;
 private:	// User declarations
 public:		// User declarations
     __fastcall TdtmEstacionamento(TComponent* Owner);

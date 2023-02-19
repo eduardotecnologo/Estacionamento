@@ -2,17 +2,7 @@ object dtmEstacionamento: TdtmEstacionamento
   OldCreateOrder = False
   Height = 356
   Width = 739
-  object cnxEstacionamento: TFDConnection
-    Params.Strings = (
-      'Server=localhost'
-      'ConnectionDef=EstacionamentoDB')
-    Connected = True
-    LoginPrompt = False
-    Left = 69
-    Top = 19
-  end
   object qryMontadora: TFDQuery
-    Active = True
     Connection = cnxEstacionamento
     SQL.Strings = (
       'SELECT MON_COD, MON_NOM FROM MONTADORA')
@@ -38,17 +28,15 @@ object dtmEstacionamento: TdtmEstacionamento
     end
   end
   object FBDriverLink: TFDPhysFBDriverLink
-    Left = 424
-    Top = 24
+    Left = 336
+    Top = 16
   end
   object WaitCursor: TFDGUIxWaitCursor
     Provider = 'Forms'
-    Left = 344
+    Left = 248
     Top = 16
   end
   object qryTipo: TFDQuery
-    Active = True
-    Connection = cnxEstacionamento
     SQL.Strings = (
       'SELECT TIP_COD,'
       '       TIP_DES '
@@ -73,8 +61,6 @@ object dtmEstacionamento: TdtmEstacionamento
     end
   end
   object qryCondutor: TFDQuery
-    Active = True
-    Connection = cnxEstacionamento
     SQL.Strings = (
       'SELECT CON_COD,'
       '       CON_NOM,'
@@ -119,8 +105,6 @@ object dtmEstacionamento: TdtmEstacionamento
     end
   end
   object qryModelo: TFDQuery
-    Active = True
-    Connection = cnxEstacionamento
     SQL.Strings = (
       'SELECT '
       '     MOD_COD,'
@@ -155,8 +139,6 @@ object dtmEstacionamento: TdtmEstacionamento
     end
   end
   object qryVeiculo: TFDQuery
-    Active = True
-    Connection = cnxEstacionamento
     SQL.Strings = (
       'SELECT VEI_COD,'
       '       MON_COD,'
@@ -213,13 +195,12 @@ object dtmEstacionamento: TdtmEstacionamento
     end
   end
   object qryConducao: TFDQuery
-    Connection = cnxEstacionamento
     SQL.Strings = (
       'SELECT CND_COD,'
       '       CON_COD,'
       '       VEI_COD'
       'FROM CONDUCAO;')
-    Left = 256
+    Left = 680
     Top = 16
     object qryConducaoCND_COD: TIntegerField
       DisplayLabel = 'C'#243'digo'
@@ -245,7 +226,8 @@ object dtmEstacionamento: TdtmEstacionamento
     end
   end
   object qryTicket: TFDQuery
-    Connection = cnxEstacionamento
+    MasterSource = dtsConducaoTicketMD
+    MasterFields = 'CND_COD'
     SQL.Strings = (
       'SELECT TIC_NUM, '
       '       CND_COD, '
@@ -253,12 +235,20 @@ object dtmEstacionamento: TdtmEstacionamento
       '       TIC_HOR_ENT, '
       '       TIC_HOR_SAI,'
       '       TIC_VAL_PAG'
-      'FROM TICKET;')
-    Left = 256
+      'FROM TICKET '
+      'WHERE CND_COD = :CND_COD;')
+    Left = 680
     Top = 80
+    ParamData = <
+      item
+        Name = 'CND_COD'
+        DataType = ftInteger
+        ParamType = ptInput
+        Value = Null
+      end>
     object qryTicketTIC_NUM: TIntegerField
       DisplayLabel = 'N'#250'mero'
-      DisplayWidth = 8
+      DisplayWidth = 10
       FieldName = 'TIC_NUM'
       Origin = 'TIC_NUM'
       ProviderFlags = [pfInUpdate, pfInWhere, pfInKey]
@@ -268,31 +258,61 @@ object dtmEstacionamento: TdtmEstacionamento
     end
     object qryTicketCND_COD: TIntegerField
       DisplayLabel = 'Condu'#231#227'o'
-      DisplayWidth = 5
+      DisplayWidth = 13
       FieldName = 'CND_COD'
       Origin = 'CND_COD'
       Required = True
     end
     object qryTicketTIC_DAT: TSQLTimeStampField
       DisplayLabel = 'Data'
+      DisplayWidth = 11
       FieldName = 'TIC_DAT'
       Origin = 'TIC_DAT'
+      EditMask = '00/00/0000;1;_'
     end
     object qryTicketTIC_HOR_ENT: TSQLTimeStampField
       DisplayLabel = 'Entrada'
+      DisplayWidth = 10
       FieldName = 'TIC_HOR_ENT'
       Origin = 'TIC_HOR_ENT'
+      EditMask = '00:00:00;1;_'
     end
     object qryTicketTIC_HOR_SAI: TSQLTimeStampField
       DisplayLabel = 'SA'#204'DA'
+      DisplayWidth = 10
       FieldName = 'TIC_HOR_SAI'
       Origin = 'TIC_HOR_SAI'
+      EditMask = '00:00:00;1;_'
     end
     object qryTicketTIC_VAL_PAG: TBCDField
       DisplayLabel = 'Valor'
+      DisplayWidth = 19
       FieldName = 'TIC_VAL_PAG'
       Origin = 'TIC_VAL_PAG'
+      currency = True
       Precision = 18
     end
+  end
+  object dtsConducaoTicketMD: TDataSource
+    DataSet = qryConducao
+    Left = 592
+    Top = 16
+  end
+  object cnxEstacionamento: TFDConnection
+    Params.Strings = (
+      
+        'Database=D:\MEGAsync\Git\developer\2023\Embarcadero\Estacionamen' +
+        'to\Banco\Base\DBESTACIONAMENTO.FDB'
+      'User_Name=SYSDBA'
+      'Password=masterkey'
+      'Protocol=TCPIP'
+      'Server=localhost'
+      'Port=3050'
+      'CharacterSet=WIN1252'
+      'DriverID=FB')
+    Connected = True
+    LoginPrompt = False
+    Left = 58
+    Top = 17
   end
 end

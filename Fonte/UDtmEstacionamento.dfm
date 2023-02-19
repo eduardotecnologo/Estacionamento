@@ -3,10 +3,12 @@ object dtmEstacionamento: TdtmEstacionamento
   Height = 356
   Width = 739
   object qryMontadora: TFDQuery
+    Active = True
+    Connection = cnxBaseestacionamento
     SQL.Strings = (
       'SELECT MON_COD, MON_NOM FROM MONTADORA')
-    Left = 168
-    Top = 16
+    Left = 200
+    Top = 24
     object qryMontadoraMON_COD: TIntegerField
       DisplayLabel = 'C'#243'digo'
       DisplayWidth = 5
@@ -27,20 +29,22 @@ object dtmEstacionamento: TdtmEstacionamento
     end
   end
   object FBDriverLink: TFDPhysFBDriverLink
-    Left = 336
+    Left = 384
     Top = 16
   end
   object WaitCursor: TFDGUIxWaitCursor
     Provider = 'Forms'
-    Left = 248
+    Left = 296
     Top = 16
   end
   object qryTipo: TFDQuery
+    Active = True
+    Connection = cnxBaseestacionamento
     SQL.Strings = (
       'SELECT TIP_COD,'
       '       TIP_DES '
       'FROM TIPO')
-    Left = 168
+    Left = 200
     Top = 80
     object qryTipoTIP_COD: TIntegerField
       DisplayLabel = 'C'#243'digo'
@@ -60,14 +64,15 @@ object dtmEstacionamento: TdtmEstacionamento
     end
   end
   object qryCondutor: TFDQuery
+    Connection = cnxBaseestacionamento
     SQL.Strings = (
       'SELECT CON_COD,'
       '       CON_NOM,'
       '       CON_CNH,'
       '       CON_CPF'
       'FROM CONDUTOR')
-    Left = 168
-    Top = 152
+    Left = 200
+    Top = 144
     object qryCondutorCON_COD: TIntegerField
       DisplayLabel = 'C'#243'digo'
       DisplayWidth = 5
@@ -104,14 +109,16 @@ object dtmEstacionamento: TdtmEstacionamento
     end
   end
   object qryModelo: TFDQuery
+    Active = True
+    Connection = cnxBaseestacionamento
     SQL.Strings = (
       'SELECT '
       '     MOD_COD,'
       '     MON_COD,'
       '     MOD_NOM '
       'FROM MODELO ')
-    Left = 168
-    Top = 216
+    Left = 200
+    Top = 208
     object qryModeloMOD_COD: TIntegerField
       DisplayLabel = 'C'#243'digo'
       DisplayWidth = 5
@@ -138,6 +145,8 @@ object dtmEstacionamento: TdtmEstacionamento
     end
   end
   object qryVeiculo: TFDQuery
+    Active = True
+    Connection = cnxBaseestacionamento
     SQL.Strings = (
       'SELECT VEI_COD,'
       '       MON_COD,'
@@ -146,7 +155,7 @@ object dtmEstacionamento: TdtmEstacionamento
       '       VEI_PLA,'
       '       VEI_ANO_FAB'
       '    FROM VEICULO; ')
-    Left = 168
+    Left = 200
     Top = 272
     object qryVeiculoVEI_COD: TIntegerField
       DisplayLabel = '&C'#243'digo'
@@ -297,11 +306,12 @@ object dtmEstacionamento: TdtmEstacionamento
     Left = 592
     Top = 16
   end
-  object cnxEstacionamento: TFDConnection
+  object cnxBaseestacionamento: TFDConnection
     Params.Strings = (
-      'ConnectionDef=Estacionamento')
+      'ConnectionDef=Baseestacionamento')
+    Connected = True
     LoginPrompt = False
-    Left = 58
-    Top = 17
+    Left = 81
+    Top = 21
   end
 end
