@@ -2491,6 +2491,7 @@ inherited FrmCadastroModelo: TFrmCadastroModelo
     Top = 64
   end
   object qryMontadoraLK: TFDQuery
+    Connection = dtmEstacionamento.cnxEstacionamento
     SQL.Strings = (
       'SELECT '
       '      MON_COD,'

@@ -61,12 +61,11 @@ __published:	// IDE-managed Components
     TMenuItem *AtualizaModelo1;
     TPopupMenu *ppmTipoLK;
     TMenuItem *AtualizaTipo1;
-	TLabel *Label7;
-	TEdit *Edit1;
     void __fastcall EvAtualizaMontadoraLKClick(TObject *Sender);
-	void __fastcall EvAtualizaModeloLKClick(TObject *Sender);
-	void __fastcall EvAtualizaTipoLK(TObject *Sender);
-	void __fastcall EvFiltraModeloDataSet(TObject *Sender, TField *Field);
+    void __fastcall EvAtualizaModeloLKClick(TObject *Sender);
+    void __fastcall EvAtualizaTipoLK(TObject *Sender);
+    void __fastcall EvFiltraModeloDataChange(TObject *Sender);
+	void __fastcall dtsMontadoraLKDataChange(TObject *Sender, TField *Field);
 private:	// User declarations
 public:		// User declarations
     __fastcall TFrmCadastroVeiculo(TComponent* Owner);

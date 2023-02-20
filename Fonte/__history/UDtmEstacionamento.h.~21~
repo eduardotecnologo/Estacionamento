@@ -72,8 +72,7 @@ public:		// User declarations
     // Construtor
     __fastcall TdtmEstacionamento(TComponent* Owner);
 
-	// __fastcall diretiva do compilador
-	void __fastcall ConfigureLookUp(TFDQuery* AQuery);
+    void __fastcall ConfigureLookUp(TFDQuery* AQuery);
     void __fastcall AtualizaLookUp(TFDQuery* AQuery);
     void __fastcall LimpaModeloVeiculo();
 };

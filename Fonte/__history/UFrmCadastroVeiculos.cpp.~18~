@@ -36,14 +36,4 @@ void __fastcall TFrmCadastroVeiculo::EvAtualizaTipoLK(TObject *Sender)
    dtmEstacionamento->AtualizaLookUp(qryTipoLK);
 }
 //----------------------EvFiltraModeloDataChange--------------------------------
-
-//---------------------------------------------------------------------------
-
-
-void __fastcall TFrmCadastroVeiculo::EvFiltraModeloDataSet(TObject *Sender, TField *Field)
-
-{
-   dtmEstacionamento->LimpaModeloVeiculo();
-}
-//---------------------------------------------------------------------------
-
+-----------------------------------------------------------------------

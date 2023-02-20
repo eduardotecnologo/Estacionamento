@@ -204,14 +204,12 @@ object dtmEstacionamento: TdtmEstacionamento
     end
   end
   object qryConducao: TFDQuery
-    Active = True
-    Connection = cnxBaseestacionamento
     SQL.Strings = (
       'SELECT CND_COD,'
       '       CON_COD,'
       '       VEI_COD'
       'FROM CONDUCAO;')
-    Left = 656
+    Left = 680
     Top = 16
     object qryConducaoCND_COD: TIntegerField
       DisplayLabel = 'C'#243'digo'
@@ -237,13 +235,8 @@ object dtmEstacionamento: TdtmEstacionamento
     end
   end
   object qryTicket: TFDQuery
-    Active = True
     MasterSource = dtsConducaoTicketMD
     MasterFields = 'CND_COD'
-    DetailFields = 'CND_COD'
-    Connection = cnxBaseestacionamento
-    FetchOptions.AssignedValues = [evCache]
-    FetchOptions.Cache = [fiBlobs, fiMeta]
     SQL.Strings = (
       'SELECT TIC_NUM, '
       '       CND_COD, '
@@ -253,7 +246,7 @@ object dtmEstacionamento: TdtmEstacionamento
       '       TIC_VAL_PAG'
       'FROM TICKET '
       'WHERE CND_COD = :CND_COD;')
-    Left = 656
+    Left = 680
     Top = 80
     ParamData = <
       item
@@ -311,7 +304,7 @@ object dtmEstacionamento: TdtmEstacionamento
   end
   object dtsConducaoTicketMD: TDataSource
     DataSet = qryConducao
-    Left = 552
+    Left = 592
     Top = 16
   end
   object cnxBaseestacionamento: TFDConnection

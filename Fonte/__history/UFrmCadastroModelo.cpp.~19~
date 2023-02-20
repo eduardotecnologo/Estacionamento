@@ -11,7 +11,7 @@
 #pragma link "UFrmModeloCadastroCRUD"
 #pragma resource "*.dfm"
 TFrmCadastroModelo *FrmCadastroModelo;
-//------------------------Construtor - TFrmCadastroModelo-----------------------
+//---------------------------------------------------------------------------
 __fastcall TFrmCadastroModelo::TFrmCadastroModelo(TComponent* Owner)
            : TFrmModeloCadastroCRUD(Owner)
 {

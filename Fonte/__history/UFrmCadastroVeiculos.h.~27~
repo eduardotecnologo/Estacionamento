@@ -61,8 +61,6 @@ __published:	// IDE-managed Components
     TMenuItem *AtualizaModelo1;
     TPopupMenu *ppmTipoLK;
     TMenuItem *AtualizaTipo1;
-	TLabel *Label7;
-	TEdit *Edit1;
     void __fastcall EvAtualizaMontadoraLKClick(TObject *Sender);
 	void __fastcall EvAtualizaModeloLKClick(TObject *Sender);
 	void __fastcall EvAtualizaTipoLK(TObject *Sender);

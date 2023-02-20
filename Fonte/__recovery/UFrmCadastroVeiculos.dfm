@@ -1,9 +1,9 @@
 inherited FrmCadastroVeiculo: TFrmCadastroVeiculo
   Caption = 'Cadastro de Veiculos'
-  ClientHeight = 378
-  ClientWidth = 756
-  ExplicitWidth = 762
-  ExplicitHeight = 407
+  ClientHeight = 359
+  ClientWidth = 811
+  ExplicitWidth = 817
+  ExplicitHeight = 388
   PixelsPerInch = 96
   TextHeight = 19
   object Label1: TLabel [0]
@@ -61,13 +61,20 @@ inherited FrmCadastroVeiculo: TFrmCadastroVeiculo
     Height = 19
     Caption = 'Utils:'
   end
+  object Label8: TLabel [7]
+    Left = 135
+    Top = 252
+    Width = 278
+    Height = 19
+    Caption = 'Campo com preenchimento autom'#225'tico'
+  end
   inherited tlbCadastroCRUD: TToolBar
-    Top = 313
-    Width = 756
+    Top = 294
+    Width = 811
     TabOrder = 7
     ExplicitTop = 313
   end
-  object DBEditCodigo: TDBEdit [8]
+  object DBEditCodigo: TDBEdit [9]
     Left = 95
     Top = 24
     Width = 130
@@ -76,7 +83,7 @@ inherited FrmCadastroVeiculo: TFrmCadastroVeiculo
     DataSource = DataSourceMain
     TabOrder = 0
   end
-  object DBEditMontadora: TDBEdit [9]
+  object DBEditMontadora: TDBEdit [10]
     Left = 95
     Top = 57
     Width = 130
@@ -85,7 +92,7 @@ inherited FrmCadastroVeiculo: TFrmCadastroVeiculo
     DataSource = DataSourceMain
     TabOrder = 1
   end
-  object DBEditModelo: TDBEdit [10]
+  object DBEditModelo: TDBEdit [11]
     Left = 94
     Top = 90
     Width = 131
@@ -102,7 +109,7 @@ inherited FrmCadastroVeiculo: TFrmCadastroVeiculo
     ReadOnly = True
     TabOrder = 3
   end
-  object DBEditTipo: TDBEdit [11]
+  object DBEditTipo: TDBEdit [12]
     Left = 94
     Top = 156
     Width = 131
@@ -111,7 +118,7 @@ inherited FrmCadastroVeiculo: TFrmCadastroVeiculo
     DataSource = DataSourceMain
     TabOrder = 4
   end
-  object DBEditPlaca: TDBEdit [12]
+  object DBEditPlaca: TDBEdit [13]
     Left = 94
     Top = 123
     Width = 131
@@ -121,7 +128,7 @@ inherited FrmCadastroVeiculo: TFrmCadastroVeiculo
     DataSource = DataSourceMain
     TabOrder = 5
   end
-  object DBEditFabricacao: TDBEdit [13]
+  object DBEditFabricacao: TDBEdit [14]
     Left = 311
     Top = 156
     Width = 139
@@ -130,7 +137,7 @@ inherited FrmCadastroVeiculo: TFrmCadastroVeiculo
     DataSource = DataSourceMain
     TabOrder = 6
   end
-  object DBLkCbxMontadora: TDBLookupComboBox [14]
+  object DBLkCbxMontadora: TDBLookupComboBox [15]
     Left = 231
     Top = 57
     Width = 219
@@ -143,7 +150,7 @@ inherited FrmCadastroVeiculo: TFrmCadastroVeiculo
     PopupMenu = ppmMontadoraLK
     TabOrder = 2
   end
-  object dblkModelo: TDBLookupComboBox [15]
+  object dblkModelo: TDBLookupComboBox [16]
     Left = 231
     Top = 90
     Width = 219
@@ -156,7 +163,7 @@ inherited FrmCadastroVeiculo: TFrmCadastroVeiculo
     PopupMenu = ppmModeloLK
     TabOrder = 8
   end
-  object dblkTipo: TDBLookupComboBox [16]
+  object dblkTipo: TDBLookupComboBox [17]
     Left = 231
     Top = 123
     Width = 219
@@ -169,12 +176,21 @@ inherited FrmCadastroVeiculo: TFrmCadastroVeiculo
     PopupMenu = ppmTipoLK
     TabOrder = 9
   end
-  object Edit1: TEdit [17]
+  object Edit1: TEdit [18]
     Left = 8
     Top = 249
     Width = 121
     Height = 27
+    Color = cl3DDkShadow
     TabOrder = 10
+  end
+  object ScrollBar1: TScrollBar [19]
+    Left = 776
+    Top = 8
+    Width = 20
+    Height = 351
+    PageSize = 0
+    TabOrder = 11
   end
   inherited ImgAtiva: TImageList
     Left = 704
