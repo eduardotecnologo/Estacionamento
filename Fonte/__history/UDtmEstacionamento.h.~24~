@@ -29,7 +29,6 @@
 class TdtmEstacionamento : public TDataModule
 {
 __published:	// IDE-managed Components
-    TFDConnection *cnxEstacionamento;
     TFDQuery *qryMontadora;
     TFDPhysFBDriverLink *FBDriverLink;
     TFDGUIxWaitCursor *WaitCursor;
@@ -66,11 +65,19 @@ __published:	// IDE-managed Components
     TSQLTimeStampField *qryTicketTIC_HOR_SAI;
     TBCDField *qryTicketTIC_VAL_PAG;
     TDataSource *dtsConducaoTicketMD;
+	TFDConnection *cnxBaseestacionamento;
+	TFDQuery *qryCondicao;
+	TIntegerField *qryCondicaoCND_COD;
+	TIntegerField *qryCondicaoCON_COD;
+	TIntegerField *qryCondicaoVEI_COD;
 private:	// User declarations
 public:		// User declarations
+
+    // Construtor
     __fastcall TdtmEstacionamento(TComponent* Owner);
 
-    void __fastcall ConfigureLookUp(TFDQuery* AQuery);
+	// __fastcall diretiva do compilador
+	void __fastcall ConfigureLookUp(TFDQuery* AQuery);
     void __fastcall AtualizaLookUp(TFDQuery* AQuery);
     void __fastcall LimpaModeloVeiculo();
 };

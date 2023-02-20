@@ -1,6 +1,6 @@
 object dtmEstacionamento: TdtmEstacionamento
   OldCreateOrder = False
-  Height = 356
+  Height = 394
   Width = 739
   object qryMontadora: TFDQuery
     Active = True
@@ -204,12 +204,14 @@ object dtmEstacionamento: TdtmEstacionamento
     end
   end
   object qryConducao: TFDQuery
+    Active = True
+    Connection = cnxBaseestacionamento
     SQL.Strings = (
       'SELECT CND_COD,'
       '       CON_COD,'
       '       VEI_COD'
       'FROM CONDUCAO;')
-    Left = 680
+    Left = 656
     Top = 16
     object qryConducaoCND_COD: TIntegerField
       DisplayLabel = 'C'#243'digo'
@@ -235,8 +237,13 @@ object dtmEstacionamento: TdtmEstacionamento
     end
   end
   object qryTicket: TFDQuery
+    Active = True
     MasterSource = dtsConducaoTicketMD
     MasterFields = 'CND_COD'
+    DetailFields = 'CND_COD'
+    Connection = cnxBaseestacionamento
+    FetchOptions.AssignedValues = [evCache]
+    FetchOptions.Cache = [fiBlobs, fiMeta]
     SQL.Strings = (
       'SELECT TIC_NUM, '
       '       CND_COD, '
@@ -246,7 +253,7 @@ object dtmEstacionamento: TdtmEstacionamento
       '       TIC_VAL_PAG'
       'FROM TICKET '
       'WHERE CND_COD = :CND_COD;')
-    Left = 680
+    Left = 656
     Top = 80
     ParamData = <
       item
@@ -304,7 +311,7 @@ object dtmEstacionamento: TdtmEstacionamento
   end
   object dtsConducaoTicketMD: TDataSource
     DataSet = qryConducao
-    Left = 592
+    Left = 552
     Top = 16
   end
   object cnxBaseestacionamento: TFDConnection
@@ -314,5 +321,37 @@ object dtmEstacionamento: TdtmEstacionamento
     LoginPrompt = False
     Left = 81
     Top = 21
+  end
+  object qryCondicao: TFDQuery
+    Connection = cnxBaseestacionamento
+    SQL.Strings = (
+      'SELECT CND_COD, '
+      '       CON_COD,'
+      '       VEI_COD '
+      'FROM CONDUCAO;')
+    Left = 200
+    Top = 328
+    object qryCondicaoCND_COD: TIntegerField
+      DisplayLabel = 'C'#243'digo'
+      FieldName = 'CND_COD'
+      Origin = 'CND_COD'
+      ProviderFlags = [pfInUpdate, pfInWhere, pfInKey]
+      Required = True
+      MaxValue = 2000
+      MinValue = 1
+    end
+    object qryCondicaoCON_COD: TIntegerField
+      DisplayLabel = 'Condutor'
+      DisplayWidth = 5
+      FieldName = 'CON_COD'
+      Origin = 'CON_COD'
+    end
+    object qryCondicaoVEI_COD: TIntegerField
+      DisplayLabel = 'Veiculo'
+      DisplayWidth = 5
+      FieldName = 'VEI_COD'
+      Origin = 'VEI_COD'
+      Required = True
+    end
   end
 end

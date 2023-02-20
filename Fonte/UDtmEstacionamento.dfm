@@ -1,7 +1,7 @@
 object dtmEstacionamento: TdtmEstacionamento
   OldCreateOrder = False
-  Height = 356
-  Width = 739
+  Height = 349
+  Width = 759
   object qryMontadora: TFDQuery
     Active = True
     Connection = cnxBaseestacionamento
@@ -29,12 +29,12 @@ object dtmEstacionamento: TdtmEstacionamento
     end
   end
   object FBDriverLink: TFDPhysFBDriverLink
-    Left = 384
+    Left = 472
     Top = 16
   end
   object WaitCursor: TFDGUIxWaitCursor
     Provider = 'Forms'
-    Left = 296
+    Left = 400
     Top = 16
   end
   object qryTipo: TFDQuery
@@ -211,8 +211,8 @@ object dtmEstacionamento: TdtmEstacionamento
       '       CON_COD,'
       '       VEI_COD'
       'FROM CONDUCAO;')
-    Left = 656
-    Top = 16
+    Left = 672
+    Top = 192
     object qryConducaoCND_COD: TIntegerField
       DisplayLabel = 'C'#243'digo'
       FieldName = 'CND_COD'
@@ -253,8 +253,8 @@ object dtmEstacionamento: TdtmEstacionamento
       '       TIC_VAL_PAG'
       'FROM TICKET '
       'WHERE CND_COD = :CND_COD;')
-    Left = 656
-    Top = 80
+    Left = 672
+    Top = 296
     ParamData = <
       item
         Name = 'CND_COD'
@@ -291,14 +291,14 @@ object dtmEstacionamento: TdtmEstacionamento
       DisplayWidth = 10
       FieldName = 'TIC_HOR_ENT'
       Origin = 'TIC_HOR_ENT'
-      EditMask = '00:00:00;1;_'
+      EditMask = '00:00;1;_'
     end
     object qryTicketTIC_HOR_SAI: TSQLTimeStampField
       DisplayLabel = 'SA'#204'DA'
       DisplayWidth = 10
       FieldName = 'TIC_HOR_SAI'
       Origin = 'TIC_HOR_SAI'
-      EditMask = '00:00:00;1;_'
+      EditMask = '00:00;1;_'
     end
     object qryTicketTIC_VAL_PAG: TBCDField
       DisplayLabel = 'Valor'
@@ -311,8 +311,8 @@ object dtmEstacionamento: TdtmEstacionamento
   end
   object dtsConducaoTicketMD: TDataSource
     DataSet = qryConducao
-    Left = 552
-    Top = 16
+    Left = 672
+    Top = 248
   end
   object cnxBaseestacionamento: TFDConnection
     Params.Strings = (

@@ -63,6 +63,8 @@ __published:	// IDE-managed Components
     TMenuItem *AtualizaTipo1;
 	TLabel *Label7;
 	TEdit *Edit1;
+	TLabel *Label8;
+	TScrollBar *ScrollBar1;
     void __fastcall EvAtualizaMontadoraLKClick(TObject *Sender);
 	void __fastcall EvAtualizaModeloLKClick(TObject *Sender);
 	void __fastcall EvAtualizaTipoLK(TObject *Sender);
