@@ -54,8 +54,8 @@ __published:	// IDE-managed Components
 	TDBEdit *dbeCondutor;
 	TLabel *Label3;
 	TDBEdit *dbeVeiculo;
-	TDBLookupComboBox *dblkCondutor;
-	TDBLookupComboBox *dblkVeiculo;
+	TDBLookupComboBox *dblCondutorLK;
+	TDBLookupComboBox *dblVeiculoLK;
 	void __fastcall EvAtualizarCondutor(TObject *Sender);
 	void __fastcall EvAtualizarVeiculo(TObject *Sender);
 private:	// User declarations

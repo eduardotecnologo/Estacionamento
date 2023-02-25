@@ -18,16 +18,3 @@ __fastcall TFrmCadTicket::TFrmCadTicket(TComponent* Owner)
 	dtmEstacionamento->ConfigureLookUp(qryVeiculoLK);
 }
 //---------------------------------------------------------------------------
-void __fastcall TFrmCadTicket::EvAtualizarCondutor(TObject *Sender)
-{
-	dtmEstacionamento->AtualizaLookUp(qryCondutorLK);
-}
-//---------------------------------------------------------------------------
-
-
-void __fastcall TFrmCadTicket::EvAtualizarVeiculo(TObject *Sender)
-{
-    dtmEstacionamento->AtualizaLookUp(qryVeiculoLK);
-}
-//---------------------------------------------------------------------------
-

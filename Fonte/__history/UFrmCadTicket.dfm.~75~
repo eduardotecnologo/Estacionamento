@@ -42,109 +42,95 @@ inherited FrmCadTicket: TFrmCadTicket
     Caption = '[Condu'#231#227'o]'
     TabOrder = 2
     object Label1: TLabel
-      Left = 40
-      Top = 32
+      Left = 32
+      Top = 39
       Width = 50
       Height = 19
       Caption = 'C'#243'digo'
       FocusControl = dbeCodigo
     end
     object Label2: TLabel
-      Left = 24
-      Top = 66
+      Left = 16
+      Top = 72
       Width = 66
       Height = 19
       Caption = 'Condutor'
       FocusControl = dbeCondutor
     end
     object Label3: TLabel
-      Left = 39
-      Top = 99
+      Left = 31
+      Top = 105
       Width = 51
       Height = 19
       Caption = 'Ve'#237'culo'
       FocusControl = dbeVeiculo
     end
     object dbeCodigo: TDBEdit
-      Left = 96
-      Top = 29
-      Width = 121
+      Left = 88
+      Top = 36
+      Width = 99
       Height = 27
       DataField = 'CND_COD'
-      DataSource = DataSourceMain
+      DataSource = dtmEstacionamento.dtsConducaoTicketMD
       TabOrder = 0
     end
     object dbeCondutor: TDBEdit
-      Left = 96
-      Top = 63
-      Width = 121
+      Left = 88
+      Top = 69
+      Width = 99
       Height = 27
       DataField = 'CON_COD'
-      DataSource = DataSourceMain
+      DataSource = dtmEstacionamento.dtsConducaoTicketMD
       TabOrder = 1
     end
     object dbeVeiculo: TDBEdit
-      Left = 96
-      Top = 96
-      Width = 121
+      Left = 88
+      Top = 102
+      Width = 99
       Height = 27
       DataField = 'VEI_COD'
-      DataSource = DataSourceMain
-      TabOrder = 3
-    end
-    object dblkCondutor: TDBLookupComboBox
-      Left = 223
-      Top = 63
-      Width = 234
-      Height = 27
-      DataField = 'CON_COD'
-      DataSource = DataSourceMain
-      KeyField = 'CON_COD'
-      ListField = 'CON_NOM'
-      ListSource = dtsCondutorLK
-      PopupMenu = ppmCondutor
+      DataSource = dtmEstacionamento.dtsConducaoTicketMD
       TabOrder = 2
     end
-    object dblkVeiculo: TDBLookupComboBox
-      Left = 223
-      Top = 96
-      Width = 234
+    object dblCondutorLK: TDBLookupComboBox
+      Left = 193
+      Top = 69
+      Width = 216
       Height = 27
-      DataField = 'VEI_COD'
-      DataSource = DataSourceMain
-      KeyField = 'VEI_COD'
-      ListField = 'VEI_PLA'
-      ListSource = dtsVeiculoLK
-      PopupMenu = ppmVeiculo
+      TabOrder = 3
+    end
+    object dblVeiculoLK: TDBLookupComboBox
+      Left = 193
+      Top = 102
+      Width = 216
+      Height = 27
       TabOrder = 4
     end
   end
   inherited ImgAtiva: TImageList
-    Left = 685
+    Left = 704
     Top = 232
   end
   inherited ImgHot: TImageList
-    Left = 638
+    Left = 657
     Top = 231
   end
   inherited DataSourceMain: TDataSource
-    DataSet = dtmEstacionamento.qryConducao
-    Left = 573
+    Left = 592
     Top = 232
   end
   inherited ActionListCRUD: TActionList
-    Left = 444
+    Left = 463
     Top = 232
   end
   object dtsTicket: TDataSource
-    DataSet = dtmEstacionamento.qryTicket
-    Left = 508
+    Left = 527
     Top = 232
   end
   object dtsCondutorLK: TDataSource
     DataSet = qryCondutorLK
-    Left = 277
-    Top = 232
+    Left = 365
+    Top = 231
   end
   object qryCondutorLK: TFDQuery
     Connection = dtmEstacionamento.cnxBaseestacionamento
@@ -154,23 +140,22 @@ inherited FrmCadTicket: TFrmCadTicket
       '    CON_NOM '
       'FROM CONDUTOR'
       'ORDER BY CON_NOM;')
-    Left = 278
-    Top = 288
+    Left = 362
+    Top = 287
   end
   object dtsVeiculoLK: TDataSource
     DataSet = qryVeiculoLK
-    Left = 354
+    Left = 274
     Top = 231
   end
   object qryVeiculoLK: TFDQuery
-    Active = True
     Connection = dtmEstacionamento.cnxBaseestacionamento
     SQL.Strings = (
       'SELECT VEI_COD,'
       '       VEI_PLA'
       'FROM VEICULO'
       'ORDER BY VEI_PLA;')
-    Left = 355
+    Left = 275
     Top = 287
   end
   object ppmCondutor: TPopupMenu

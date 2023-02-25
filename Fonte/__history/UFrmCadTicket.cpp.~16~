@@ -20,14 +20,14 @@ __fastcall TFrmCadTicket::TFrmCadTicket(TComponent* Owner)
 //---------------------------------------------------------------------------
 void __fastcall TFrmCadTicket::EvAtualizarCondutor(TObject *Sender)
 {
-	dtmEstacionamento->AtualizaLookUp(qryCondutorLK);
+   dtmEstacionamento->AtualizaLookUp(qryCondutorLK);
 }
 //---------------------------------------------------------------------------
 
 
 void __fastcall TFrmCadTicket::EvAtualizarVeiculo(TObject *Sender)
 {
-    dtmEstacionamento->AtualizaLookUp(qryVeiculoLK);
+   dtmEstacionamento->AtualizaLookUp(qryVeiculoLK);
 }
 //---------------------------------------------------------------------------
 

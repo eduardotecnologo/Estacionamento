@@ -90,7 +90,7 @@ inherited FrmCadTicket: TFrmCadTicket
       Height = 27
       DataField = 'VEI_COD'
       DataSource = DataSourceMain
-      TabOrder = 3
+      TabOrder = 2
     end
     object dblkCondutor: TDBLookupComboBox
       Left = 223
@@ -102,8 +102,7 @@ inherited FrmCadTicket: TFrmCadTicket
       KeyField = 'CON_COD'
       ListField = 'CON_NOM'
       ListSource = dtsCondutorLK
-      PopupMenu = ppmCondutor
-      TabOrder = 2
+      TabOrder = 3
     end
     object dblkVeiculo: TDBLookupComboBox
       Left = 223
@@ -112,10 +111,6 @@ inherited FrmCadTicket: TFrmCadTicket
       Height = 27
       DataField = 'VEI_COD'
       DataSource = DataSourceMain
-      KeyField = 'VEI_COD'
-      ListField = 'VEI_PLA'
-      ListSource = dtsVeiculoLK
-      PopupMenu = ppmVeiculo
       TabOrder = 4
     end
   end
@@ -143,8 +138,8 @@ inherited FrmCadTicket: TFrmCadTicket
   end
   object dtsCondutorLK: TDataSource
     DataSet = qryCondutorLK
-    Left = 277
-    Top = 232
+    Left = 365
+    Top = 231
   end
   object qryCondutorLK: TFDQuery
     Connection = dtmEstacionamento.cnxBaseestacionamento
@@ -154,12 +149,12 @@ inherited FrmCadTicket: TFrmCadTicket
       '    CON_NOM '
       'FROM CONDUTOR'
       'ORDER BY CON_NOM;')
-    Left = 278
-    Top = 288
+    Left = 366
+    Top = 287
   end
   object dtsVeiculoLK: TDataSource
     DataSet = qryVeiculoLK
-    Left = 354
+    Left = 274
     Top = 231
   end
   object qryVeiculoLK: TFDQuery
@@ -170,7 +165,7 @@ inherited FrmCadTicket: TFrmCadTicket
       '       VEI_PLA'
       'FROM VEICULO'
       'ORDER BY VEI_PLA;')
-    Left = 355
+    Left = 275
     Top = 287
   end
   object ppmCondutor: TPopupMenu

@@ -274,7 +274,7 @@ object dtmEstacionamento: TdtmEstacionamento
     end
     object qryTicketCND_COD: TIntegerField
       DisplayLabel = 'Condu'#231#227'o'
-      DisplayWidth = 7
+      DisplayWidth = 5
       FieldName = 'CND_COD'
       Origin = 'CND_COD'
       Required = True
@@ -291,18 +291,18 @@ object dtmEstacionamento: TdtmEstacionamento
       DisplayWidth = 10
       FieldName = 'TIC_HOR_ENT'
       Origin = 'TIC_HOR_ENT'
-      EditMask = '00:00;1;_'
+      EditMask = '00:00:00;1;_'
     end
     object qryTicketTIC_HOR_SAI: TSQLTimeStampField
       DisplayLabel = 'Sa'#237'da'
       DisplayWidth = 10
       FieldName = 'TIC_HOR_SAI'
       Origin = 'TIC_HOR_SAI'
-      EditMask = '00:00;1;_'
+      EditMask = '00:00:00;1;_'
     end
     object qryTicketTIC_VAL_PAG: TBCDField
       DisplayLabel = 'Valor'
-      DisplayWidth = 26
+      DisplayWidth = 19
       FieldName = 'TIC_VAL_PAG'
       Origin = 'TIC_VAL_PAG'
       currency = True
