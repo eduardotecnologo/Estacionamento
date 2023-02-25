@@ -1,18 +1,15 @@
 inherited FrmCadTicket: TFrmCadTicket
   Caption = 'Cadastro de Ticket'
   ClientHeight = 421
-  ClientWidth = 747
-  ExplicitWidth = 753
   ExplicitHeight = 450
   PixelsPerInch = 96
   TextHeight = 19
   inherited tlbCadastroCRUD: TToolBar
     Top = 356
-    Width = 747
     ExplicitTop = 349
   end
   object grbTicket: TGroupBox [1]
-    Left = 8
+    Left = 18
     Top = 151
     Width = 731
     Height = 202
@@ -34,7 +31,7 @@ inherited FrmCadTicket: TFrmCadTicket
     end
   end
   object grbConducao: TGroupBox [2]
-    Left = 8
+    Left = 18
     Top = 8
     Width = 731
     Height = 137
@@ -102,7 +99,6 @@ inherited FrmCadTicket: TFrmCadTicket
       ListField = 'CON_NOM'
       ListSource = dtsCondutorLK
       TabOrder = 3
-      OnClick = dblkCondutorClick
     end
     object dblkVeiculo: TDBLookupComboBox
       Left = 272
@@ -145,6 +141,7 @@ inherited FrmCadTicket: TFrmCadTicket
     Top = 231
   end
   object qryCondutorLK: TFDQuery
+    Active = True
     Connection = dtmEstacionamento.cnxBaseestacionamento
     SQL.Strings = (
       'SELECT '

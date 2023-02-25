@@ -102,7 +102,6 @@ inherited FrmCadTicket: TFrmCadTicket
       ListField = 'CON_NOM'
       ListSource = dtsCondutorLK
       TabOrder = 3
-      OnClick = dblkCondutorClick
     end
     object dblkVeiculo: TDBLookupComboBox
       Left = 272

@@ -211,8 +211,8 @@ object dtmEstacionamento: TdtmEstacionamento
       '       CON_COD,'
       '       VEI_COD'
       'FROM CONDUCAO;')
-    Left = 656
-    Top = 16
+    Left = 664
+    Top = 205
     object qryConducaoCND_COD: TIntegerField
       DisplayLabel = 'C'#243'digo'
       FieldName = 'CND_COD'
@@ -252,9 +252,9 @@ object dtmEstacionamento: TdtmEstacionamento
       '       TIC_HOR_SAI,'
       '       TIC_VAL_PAG'
       'FROM TICKET '
-      'WHERE CND_COD = :CND_COD;')
-    Left = 656
-    Top = 80
+      ' WHERE CND_COD = :CND_COD;')
+    Left = 664
+    Top = 296
     ParamData = <
       item
         Name = 'CND_COD'
@@ -274,7 +274,7 @@ object dtmEstacionamento: TdtmEstacionamento
     end
     object qryTicketCND_COD: TIntegerField
       DisplayLabel = 'Condu'#231#227'o'
-      DisplayWidth = 13
+      DisplayWidth = 5
       FieldName = 'CND_COD'
       Origin = 'CND_COD'
       Required = True
@@ -294,7 +294,7 @@ object dtmEstacionamento: TdtmEstacionamento
       EditMask = '00:00:00;1;_'
     end
     object qryTicketTIC_HOR_SAI: TSQLTimeStampField
-      DisplayLabel = 'SA'#204'DA'
+      DisplayLabel = 'Sa'#237'da'
       DisplayWidth = 10
       FieldName = 'TIC_HOR_SAI'
       Origin = 'TIC_HOR_SAI'
@@ -311,8 +311,8 @@ object dtmEstacionamento: TdtmEstacionamento
   end
   object dtsConducaoTicketMD: TDataSource
     DataSet = qryConducao
-    Left = 552
-    Top = 16
+    Left = 664
+    Top = 251
   end
   object cnxBaseestacionamento: TFDConnection
     Params.Strings = (

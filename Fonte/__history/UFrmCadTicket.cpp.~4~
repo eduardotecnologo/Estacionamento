@@ -3,15 +3,15 @@
 #include <vcl.h>
 #pragma hdrstop
 
-#include "UFrmCadastrarTipo.h"
+#include "UFrmCadTicket.h"
 #include "UDtmEstacionamento.h"
 //---------------------------------------------------------------------------
 #pragma package(smart_init)
 #pragma link "UFrmModeloCadastroCRUD"
 #pragma resource "*.dfm"
-TFrmCadastroTipo *FrmCadastroTipo;
+TFrmCadTicket *FrmCadTicket;
 //---------------------------------------------------------------------------
-__fastcall TFrmCadastroTipo::TFrmCadastroTipo(TComponent* Owner)
+__fastcall TFrmCadTicket::TFrmCadTicket(TComponent* Owner)
     : TFrmModeloCadastroCRUD(Owner)
 {
 }

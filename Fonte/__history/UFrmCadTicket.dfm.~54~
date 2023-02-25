@@ -1,18 +1,15 @@
 inherited FrmCadTicket: TFrmCadTicket
   Caption = 'Cadastro de Ticket'
-  ClientHeight = 421
-  ClientWidth = 747
-  ExplicitWidth = 753
-  ExplicitHeight = 450
+  ClientHeight = 414
+  ExplicitHeight = 443
   PixelsPerInch = 96
   TextHeight = 19
   inherited tlbCadastroCRUD: TToolBar
-    Top = 356
-    Width = 747
+    Top = 349
     ExplicitTop = 349
   end
   object grbTicket: TGroupBox [1]
-    Left = 8
+    Left = 18
     Top = 151
     Width = 731
     Height = 202
@@ -34,7 +31,7 @@ inherited FrmCadTicket: TFrmCadTicket
     end
   end
   object grbConducao: TGroupBox [2]
-    Left = 8
+    Left = 18
     Top = 8
     Width = 731
     Height = 137
@@ -98,23 +95,7 @@ inherited FrmCadTicket: TFrmCadTicket
       Height = 27
       DataField = 'CON_COD'
       DataSource = DataSourceMain
-      KeyField = 'CON_COD'
-      ListField = 'CON_NOM'
-      ListSource = dtsCondutorLK
       TabOrder = 3
-      OnClick = dblkCondutorClick
-    end
-    object dblkVeiculo: TDBLookupComboBox
-      Left = 272
-      Top = 95
-      Width = 249
-      Height = 27
-      DataField = 'VEI_COD'
-      DataSource = DataSourceMain
-      KeyField = 'VEI_COD'
-      ListField = 'VEI_PLA'
-      ListSource = dtsVeiculoLK
-      TabOrder = 4
     end
   end
   inherited ImgAtiva: TImageList
@@ -156,18 +137,10 @@ inherited FrmCadTicket: TFrmCadTicket
     Top = 287
   end
   object dtsVeiculoLK: TDataSource
-    DataSet = qryVeiculoLK
     Left = 274
     Top = 231
   end
   object qryVeiculoLK: TFDQuery
-    Active = True
-    Connection = dtmEstacionamento.cnxBaseestacionamento
-    SQL.Strings = (
-      'SELECT VEI_COD,'
-      '       VEI_PLA'
-      'FROM VEICULO'
-      'ORDER BY VEI_PLA;')
     Left = 275
     Top = 287
   end

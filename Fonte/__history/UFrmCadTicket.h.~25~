@@ -51,7 +51,6 @@ __published:	// IDE-managed Components
 	TDataSource *dtsVeiculoLK;
 	TFDQuery *qryVeiculoLK;
 	TDBLookupComboBox *dblkVeiculo;
-	void __fastcall dblkCondutorClick(TObject *Sender);
 private:	// User declarations
 public:		// User declarations
     __fastcall TFrmCadTicket(TComponent* Owner);

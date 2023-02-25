@@ -1,5 +1,0 @@
-inherited FrmModeloCadastroCRUD1: TFrmModeloCadastroCRUD1
-  Caption = 'FrmModeloCadastroCRUD1'
-  PixelsPerInch = 96
-  TextHeight = 19
-end

@@ -45,13 +45,6 @@ __published:	// IDE-managed Components
 	TDBEdit *dbeCondutor;
 	TLabel *Label3;
 	TDBEdit *dbeVeiculo;
-	TDBLookupComboBox *dblkCondutor;
-	TDataSource *dtsCondutorLK;
-	TFDQuery *qryCondutorLK;
-	TDataSource *dtsVeiculoLK;
-	TFDQuery *qryVeiculoLK;
-	TDBLookupComboBox *dblkVeiculo;
-	void __fastcall dblkCondutorClick(TObject *Sender);
 private:	// User declarations
 public:		// User declarations
     __fastcall TFrmCadTicket(TComponent* Owner);

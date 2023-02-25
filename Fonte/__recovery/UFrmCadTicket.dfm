@@ -91,19 +91,6 @@ inherited FrmCadTicket: TFrmCadTicket
       DataSource = DataSourceMain
       TabOrder = 2
     end
-    object dblkCondutor: TDBLookupComboBox
-      Left = 272
-      Top = 62
-      Width = 249
-      Height = 27
-      DataField = 'CON_COD'
-      DataSource = DataSourceMain
-      KeyField = 'CON_COD'
-      ListField = 'CON_NOM'
-      ListSource = dtsCondutorLK
-      TabOrder = 3
-      OnClick = dblkCondutorClick
-    end
     object dblkVeiculo: TDBLookupComboBox
       Left = 272
       Top = 95
@@ -114,7 +101,20 @@ inherited FrmCadTicket: TFrmCadTicket
       KeyField = 'VEI_COD'
       ListField = 'VEI_PLA'
       ListSource = dtsVeiculoLK
+      TabOrder = 3
+    end
+    object dblkCondutor: TDBLookupComboBox
+      Left = 272
+      Top = 62
+      Width = 249
+      Height = 27
+      DataField = 'CON_COD'
+      DataSource = DataSourceMain
+      KeyField = 'CON_COD'
+      ListField = 'CON_NOM'
+      ListSource = dtsCondutorLK
       TabOrder = 4
+      OnClick = dblkCondutorClick
     end
   end
   inherited ImgAtiva: TImageList

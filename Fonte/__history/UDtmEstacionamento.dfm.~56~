@@ -252,7 +252,7 @@ object dtmEstacionamento: TdtmEstacionamento
       '       TIC_HOR_SAI,'
       '       TIC_VAL_PAG'
       'FROM TICKET '
-      ' WHERE CND_COD = :CND_COD;')
+      'WHERE CND_COD = :CND_COD;')
     Left = 664
     Top = 296
     ParamData = <
@@ -274,7 +274,7 @@ object dtmEstacionamento: TdtmEstacionamento
     end
     object qryTicketCND_COD: TIntegerField
       DisplayLabel = 'Condu'#231#227'o'
-      DisplayWidth = 5
+      DisplayWidth = 13
       FieldName = 'CND_COD'
       Origin = 'CND_COD'
       Required = True
