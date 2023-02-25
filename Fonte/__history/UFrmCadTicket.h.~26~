@@ -35,20 +35,23 @@
 class TFrmCadTicket : public TFrmModeloCadastroCRUD
 {
 __published:	// IDE-managed Components
-    TGroupBox *grbConducao;
     TGroupBox *grbTicket;
 	TDataSource *dtsTicket;
     TDBGrid *DBGrid1;
-	TFDQuery *qryVeiculo;
-	TFDQuery *qryConducao;
+	TGroupBox *grbConducao;
 	TLabel *Label1;
-	TDBEdit *dbEditCodigo;
+	TDBEdit *dbeCodigo;
 	TLabel *Label2;
-	TDBEdit *dbEditCondutor;
+	TDBEdit *dbeCondutor;
 	TLabel *Label3;
-	TDBEdit *dbEditVeiculo;
+	TDBEdit *dbeVeiculo;
 	TDBLookupComboBox *dblkCondutor;
 	TDataSource *dtsCondutorLK;
+	TFDQuery *qryCondutorLK;
+	TDataSource *dtsVeiculoLK;
+	TFDQuery *qryVeiculoLK;
+	TDBLookupComboBox *dblkVeiculo;
+	void __fastcall dblkCondutorClick(TObject *Sender);
 private:	// User declarations
 public:		// User declarations
     __fastcall TFrmCadTicket(TComponent* Owner);
