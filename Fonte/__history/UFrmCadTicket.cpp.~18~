@@ -27,13 +27,13 @@ void __fastcall TFrmCadTicket::EvAtualizarCondutor(TObject *Sender)
 
 void __fastcall TFrmCadTicket::EvAtualizarVeiculo(TObject *Sender)
 {
-	dtmEstacionamento->AtualizaLookUp(qryVeiculoLK);
+    dtmEstacionamento->AtualizaLookUp(qryVeiculoLK);
 }
 //---------------------------------------------------------------------------
 
 void __fastcall TFrmCadTicket::EvGravarConducao(TObject *Sender)
 {
-	dtmEstacionamento->GraveConducao();
+   dtmEstacionamento->GraveConducao();
 }
 //---------------------------------------------------------------------------
 

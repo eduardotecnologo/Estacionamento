@@ -33,6 +33,37 @@ inherited FrmCadTicket: TFrmCadTicket
       TitleFont.Name = 'Tahoma'
       TitleFont.Style = []
       OnEnter = EvGravarConducao
+      Columns = <
+        item
+          Expanded = False
+          FieldName = 'TIC_NUM'
+          Visible = True
+        end
+        item
+          Expanded = False
+          FieldName = 'CND_COD'
+          Visible = False
+        end
+        item
+          Expanded = False
+          FieldName = 'TIC_DAT'
+          Visible = True
+        end
+        item
+          Expanded = False
+          FieldName = 'TIC_HOR_ENT'
+          Visible = True
+        end
+        item
+          Expanded = False
+          FieldName = 'TIC_HOR_SAI'
+          Visible = True
+        end
+        item
+          Expanded = False
+          FieldName = 'TIC_VAL_PAG'
+          Visible = True
+        end>
     end
   end
   object grbConducao: TGroupBox [2]

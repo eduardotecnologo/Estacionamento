@@ -42,51 +42,109 @@ inherited FrmCadTicket: TFrmCadTicket
     Caption = '[Condu'#231#227'o]'
     TabOrder = 2
     object Label1: TLabel
-      Left = 38
+      Left = 40
       Top = 32
       Width = 50
       Height = 19
       Caption = 'C'#243'digo'
+      FocusControl = dbeCodigo
     end
     object Label2: TLabel
-      Left = 22
-      Top = 64
+      Left = 24
+      Top = 66
       Width = 66
       Height = 19
       Caption = 'Condutor'
+      FocusControl = dbeCondutor
     end
     object Label3: TLabel
-      Left = 37
-      Top = 98
+      Left = 39
+      Top = 99
       Width = 51
       Height = 19
       Caption = 'Ve'#237'culo'
+      FocusControl = dbeVeiculo
+    end
+    object dbeCodigo: TDBEdit
+      Left = 96
+      Top = 29
+      Width = 121
+      Height = 27
+      DataField = 'CND_COD'
+      DataSource = DataSourceMain
+      TabOrder = 0
+    end
+    object dbeCondutor: TDBEdit
+      Left = 96
+      Top = 63
+      Width = 121
+      Height = 27
+      DataField = 'CON_COD'
+      DataSource = DataSourceMain
+      TabOrder = 1
+    end
+    object dbeVeiculo: TDBEdit
+      Left = 96
+      Top = 96
+      Width = 121
+      Height = 27
+      DataField = 'VEI_COD'
+      DataSource = DataSourceMain
+      TabOrder = 3
+    end
+    object dblkCondutor: TDBLookupComboBox
+      Left = 223
+      Top = 63
+      Width = 234
+      Height = 27
+      DataField = 'CON_COD'
+      DataSource = DataSourceMain
+      KeyField = 'CON_COD'
+      ListField = 'CON_NOM'
+      ListSource = dtsCondutorLK
+      PopupMenu = ppmCondutor
+      TabOrder = 2
+    end
+    object dblkVeiculo: TDBLookupComboBox
+      Left = 223
+      Top = 96
+      Width = 234
+      Height = 27
+      DataField = 'VEI_COD'
+      DataSource = DataSourceMain
+      KeyField = 'VEI_COD'
+      ListField = 'VEI_PLA'
+      ListSource = dtsVeiculoLK
+      PopupMenu = ppmVeiculo
+      TabOrder = 4
     end
   end
   inherited ImgAtiva: TImageList
-    Left = 704
+    Left = 685
     Top = 232
   end
   inherited ImgHot: TImageList
-    Left = 657
+    Left = 638
     Top = 231
   end
   inherited DataSourceMain: TDataSource
-    Left = 592
+    DataSet = dtmEstacionamento.qryConducao
+    Left = 573
     Top = 232
   end
   inherited ActionListCRUD: TActionList
-    Left = 463
+    Left = 444
     Top = 232
   end
   object dtsTicket: TDataSource
-    Left = 527
+    DataSet = dtmEstacionamento.qryTicket
+    Left = 508
     Top = 232
   end
   object dtsCondutorLK: TDataSource
     DataSet = qryCondutorLK
-    Left = 365
-    Top = 231
+    Left = 290
+    Top = 233
   end
   object qryCondutorLK: TFDQuery
     Connection = dtmEstacionamento.cnxBaseestacionamento
@@ -96,35 +154,36 @@ inherited FrmCadTicket: TFrmCadTicket
       '    CON_NOM '
       'FROM CONDUTOR'
       'ORDER BY CON_NOM;')
-    Left = 362
-    Top = 287
+    Left = 291
+    Top = 289
   end
   object dtsVeiculoLK: TDataSource
     DataSet = qryVeiculoLK
-    Left = 274
-    Top = 231
+    Left = 367
+    Top = 232
   end
   object qryVeiculoLK: TFDQuery
+    Active = True
     Connection = dtmEstacionamento.cnxBaseestacionamento
     SQL.Strings = (
       'SELECT VEI_COD,'
       '       VEI_PLA'
       'FROM VEICULO'
       'ORDER BY VEI_PLA;')
-    Left = 275
-    Top = 287
+    Left = 368
+    Top = 288
   end
   object ppmCondutor: TPopupMenu
-    Left = 192
-    Top = 235
+    Left = 205
+    Top = 236
     object AtualizarCondutor1: TMenuItem
       Caption = 'Atualizar Condutor'
       OnClick = EvAtualizarCondutor
     end
   end
   object ppmVeiculo: TPopupMenu
-    Left = 193
-    Top = 285
+    Left = 206
+    Top = 286
     object AtualizaVeculo1: TMenuItem
       Caption = 'Atualiza Ve'#237'culo'
       OnClick = EvAtualizarVeiculo

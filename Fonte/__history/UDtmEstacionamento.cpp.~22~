@@ -49,12 +49,8 @@ void __fastcall TdtmEstacionamento::LimpaModeloVeiculo()
 		TStringField *qryVeiculoVEI_PLA;*/
 }
 //---------------------------------------------------------------------------
-  void __fastcall TdtmEstacionamento::GraveConducao()
-{
-	if(qryConducao->State == dsInsert || qryConducao->State == dsEdit)
-	{
-        qryConducao->Post();
-	}
+  void __fastcall TdtmEstacionamento::GraveConducao(){
+
 
 }
 //---------------------------------------------------------------------------

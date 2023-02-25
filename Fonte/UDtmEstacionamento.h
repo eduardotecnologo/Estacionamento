@@ -75,7 +75,8 @@ public:		// User declarations
 	// __fastcall diretiva do compilador
 	void __fastcall ConfigureLookUp(TFDQuery* AQuery);
     void __fastcall AtualizaLookUp(TFDQuery* AQuery);
-    void __fastcall LimpaModeloVeiculo();
+	void __fastcall LimpaModeloVeiculo();
+    void __fastcall GraveConducao();
 };
 //---------------------------------------------------------------------------
 extern PACKAGE TdtmEstacionamento *dtmEstacionamento;
