@@ -73,13 +73,13 @@ void __fastcall TdtmEstacionamento::AtribuirHoraSaidaTicket()
 	qryTicket->Edit();
 	qryTicketTIC_HOR_SAI->AsDateTime = Now();
 }
-//-------------------------Pesquise---------------------------------------------
+//------------------------------------------------------------------------------
 
 bool __fastcall TdtmEstacionamento::Pesquise(TFDQuery *AQuery,
 											 UnicodeString ANomePK,
 											 int AValorPesquisa)
 {
-	bool resultado = false;
+    bool resultado = false;
 	if(AQuery)
 	{
 		try
@@ -99,9 +99,9 @@ bool __fastcall TdtmEstacionamento::Pesquise(TFDQuery *AQuery,
 	}
 	return resultado;
 }
-//-------------------------PesquiseMontadora------------------------------------
+//------------------------------------------------------------------------------
 
 bool __fastcall TdtmEstacionamento::PesquiseMontadora(int AValorPK)
 {
-    return Pesquise(qryMontadora, "CODIGO", AValorPK);
+    return Pesquise(qrmontadora, "CODIGO", AValorPK);
 }

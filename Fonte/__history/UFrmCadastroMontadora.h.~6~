@@ -26,7 +26,6 @@ __published:	// IDE-managed Components
     TDBEdit *dbECodigo;
     TLabel *Label2;
     TDBEdit *dbEditNome;
-	void __fastcall EvPesquisarMontadoraExit(TObject *Sender);
 private:	// User declarations
 public:		// User declarations
     __fastcall TFrmCadastroMontadora(TComponent* Owner);

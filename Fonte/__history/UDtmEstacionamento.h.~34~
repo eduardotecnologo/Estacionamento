@@ -29,7 +29,6 @@
 class TdtmEstacionamento : public TDataModule
 {
 __published:	// IDE-managed Components
-    TFDConnection *cnxEstacionamento;
     TFDQuery *qryMontadora;
     TFDPhysFBDriverLink *FBDriverLink;
     TFDGUIxWaitCursor *WaitCursor;
@@ -61,19 +60,27 @@ __published:	// IDE-managed Components
     TFDQuery *qryTicket;
     TIntegerField *qryTicketTIC_NUM;
     TIntegerField *qryTicketCND_COD;
-    TSQLTimeStampField *qryTicketTIC_DAT;
-    TSQLTimeStampField *qryTicketTIC_HOR_ENT;
-    TSQLTimeStampField *qryTicketTIC_HOR_SAI;
-    TBCDField *qryTicketTIC_VAL_PAG;
+	TSQLTimeStampField *qryTicketTIC_DAT;
+	TSQLTimeStampField *qryTicketTIC_HOR_ENT;
+	TSQLTimeStampField *qryTicketTIC_HOR_SAI;
+	TBCDField *qryTicketTIC_VAL_PAG;
     TDataSource *dtsConducaoTicketMD;
-	TFDConnection *EstacionamentoConnection;
+	TFDConnection *cnxBaseestacionamento;
+	void __fastcall EvAddDataHoraCorrenteNewRecord(TDataSet *DataSet);
 private:	// User declarations
+	bool __fastcall Pesquise(TFDQuery *AQuery, UnicodeString ANomePK,
+							 int AValorPesquisa);
 public:		// User declarations
+
+    // Construtor
     __fastcall TdtmEstacionamento(TComponent* Owner);
 
-    void __fastcall ConfigureLookUp(TFDQuery* AQuery);
+	// __fastcall diretiva do compilador
+	void __fastcall ConfigureLookUp(TFDQuery* AQuery);
     void __fastcall AtualizaLookUp(TFDQuery* AQuery);
-    void __fastcall LimpaModeloVeiculo();
+	void __fastcall LimpaModeloVeiculo();
+	void __fastcall GraveConducao();
+	void __fastcall AtribuirHoraSaidaTicket();
 };
 //---------------------------------------------------------------------------
 extern PACKAGE TdtmEstacionamento *dtmEstacionamento;

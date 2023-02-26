@@ -1,8 +1,8 @@
-//---------------------------------------------------------------------------
+//------------------------------------------------------------------------------
 #pragma hdrstop
 
 #include "UDtmEstacionamento.h"
-//---------------------------------------------------------------------------
+//------------------------------------------------------------------------------
 #pragma package(smart_init)
 #pragma classgroup "Vcl.Controls.TControl"
 #pragma resource "*.dfm"
@@ -48,7 +48,7 @@ void __fastcall TdtmEstacionamento::LimpaModeloVeiculo()
 		TIntegerField *qryVeiculoTIP_COD;
 		TStringField *qryVeiculoVEI_PLA;*/
 }
-//---------------------------------------------------------------------------
+//-------------------------GraveConducao----------------------------------------
   void __fastcall TdtmEstacionamento::GraveConducao()
 {
 	if(qryConducao->State == dsInsert || qryConducao->State == dsEdit)
@@ -57,18 +57,44 @@ void __fastcall TdtmEstacionamento::LimpaModeloVeiculo()
 	}
 
 }
-//---------------------------------------------------------------------------
+//-------------------------EvAddDataHoraCorrenteNewRecord-----------------------
 
-void __fastcall TdtmEstacionamento::EvAddDataHoraCorrenteNewRecord(TDataSet *DataSet)
+void __fastcall TdtmEstacionamento::EvAddDataHoraCorrenteNewRecord(
+				TDataSet *DataSet)
 
 {
-	if()
-	{
-
-	}
-	/*TSQLTimeStampField *qryTicketTIC_DAT;
-	TSQLTimeStampField *qryTicketTIC_HOR_ENT;
-	TSQLTimeStampField *qryTicketTIC_HOR_SAI;*/
+	qryTicketTIC_DAT->AsDateTime = Date();
+	qryTicketTIC_HOR_ENT->AsDateTime = Now();
 }
-//---------------------------------------------------------------------------
+//-------------------------AtribuirHoraSaidaTicket------------------------------
 
+void __fastcall TdtmEstacionamento::AtribuirHoraSaidaTicket()
+{
+	qryTicket->Edit();
+	qryTicketTIC_HOR_SAI->AsDateTime = Now();
+}
+//------------------------------------------------------------------------------
+
+bool __fastcall TdtmEstacionamento::Pesquise(TFDQuery *AQuery,
+											 UnicodeString ANomePK,
+											 int AValorPesquisa)
+{
+    bool resultado = false;
+	if(AQuery)
+	{
+		try
+		{
+			AQuery->DisableControls();
+			AQuery->Close();
+			AQuery->ParamByName(ANomePK)->AsInteger = AValorPesquisa;
+			AQuery->Open();
+			resultado = !AQuery->IsEmpty();
+            return resultado;
+		}
+		__finally
+		{
+            AQuery->EnableControls();
+		}
+	}
+}
+//------------------------------------------------------------------------------

@@ -229,35 +229,35 @@ inherited FrmCadTicket: TFrmCadTicket
     OnClick = EvAddHoraAtualSaidaTicketSelecionado
   end
   inherited ImgAtiva: TImageList
-    Left = 383
-    Top = 342
+    Left = 413
+    Top = 302
   end
   inherited ImgDesabilitado: TImageList
-    Left = 424
-    Top = 342
+    Left = 448
+    Top = 302
   end
   inherited ImgHot: TImageList
-    Left = 342
-    Top = 341
+    Left = 366
+    Top = 301
   end
   inherited DataSourceMain: TDataSource
     DataSet = dtmEstacionamento.qryConducao
     Left = 421
-    Top = 278
+    Top = 238
   end
   inherited ActionListCRUD: TActionList
     Left = 292
-    Top = 278
+    Top = 238
   end
   object dtsTicket: TDataSource
     DataSet = dtmEstacionamento.qryTicket
     Left = 356
-    Top = 278
+    Top = 238
   end
   object dtsCondutorLK: TDataSource
     DataSet = qryCondutorLK
     Left = 138
-    Top = 279
+    Top = 239
   end
   object qryCondutorLK: TFDQuery
     Active = True
@@ -269,12 +269,12 @@ inherited FrmCadTicket: TFrmCadTicket
       'FROM CONDUTOR'
       'ORDER BY CON_NOM;')
     Left = 139
-    Top = 335
+    Top = 295
   end
   object dtsVeiculoLK: TDataSource
     DataSet = qryVeiculoLK
     Left = 215
-    Top = 278
+    Top = 238
   end
   object qryVeiculoLK: TFDQuery
     Active = True
@@ -285,11 +285,11 @@ inherited FrmCadTicket: TFrmCadTicket
       'FROM VEICULO'
       'ORDER BY VEI_PLA;')
     Left = 216
-    Top = 334
+    Top = 294
   end
   object ppmCondutor: TPopupMenu
     Left = 53
-    Top = 282
+    Top = 242
     object AtualizarCondutor1: TMenuItem
       Caption = 'Atualizar Condutor'
       OnClick = EvAtualizarCondutor
@@ -297,7 +297,7 @@ inherited FrmCadTicket: TFrmCadTicket
   end
   object ppmVeiculo: TPopupMenu
     Left = 54
-    Top = 332
+    Top = 292
     object AtualizaVeculo1: TMenuItem
       Caption = 'Atualiza Ve'#237'culo'
       OnClick = EvAtualizarVeiculo

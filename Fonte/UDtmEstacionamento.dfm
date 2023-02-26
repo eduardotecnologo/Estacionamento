@@ -6,9 +6,20 @@ object dtmEstacionamento: TdtmEstacionamento
     Active = True
     Connection = cnxBaseestacionamento
     SQL.Strings = (
-      'SELECT MON_COD, MON_NOM FROM MONTADORA')
+      'SELECT MON_COD, '
+      '       MON_NOM '
+      'FROM MONTADORA'
+      '  WHERE MON_COD = :CODIGO;'
+      '')
     Left = 200
     Top = 24
+    ParamData = <
+      item
+        Name = 'CODIGO'
+        DataType = ftInteger
+        ParamType = ptInput
+        Value = Null
+      end>
     object qryMontadoraMON_COD: TIntegerField
       DisplayLabel = 'C'#243'digo'
       DisplayWidth = 5

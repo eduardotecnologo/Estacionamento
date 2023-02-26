@@ -17,9 +17,3 @@ __fastcall TFrmCadastroMontadora::TFrmCadastroMontadora(TComponent* Owner)
 
 }
 //---------------------------------------------------------------------------
-void __fastcall TFrmCadastroMontadora::EvPesquisarMontadoraExit(TObject *Sender)
-{
-	ShowMessage("Passou no onExit");
-}
-//---------------------------------------------------------------------------
-

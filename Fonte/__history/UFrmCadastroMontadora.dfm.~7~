@@ -1,9 +1,9 @@
 inherited FrmCadastroMontadora: TFrmCadastroMontadora
   Caption = 'Cadastro Montadora'
-  ClientHeight = 178
+  ClientHeight = 216
   ClientWidth = 530
   ExplicitWidth = 536
-  ExplicitHeight = 207
+  ExplicitHeight = 245
   PixelsPerInch = 96
   TextHeight = 19
   object Label1: TLabel [0]
@@ -16,14 +16,14 @@ inherited FrmCadastroMontadora: TFrmCadastroMontadora
   end
   object Label2: TLabel [1]
     Left = 32
-    Top = 72
+    Top = 95
     Width = 42
     Height = 19
     Caption = '&Nome'
     FocusControl = dbEditNome
   end
   inherited tlbCadastroCRUD: TToolBar
-    Top = 113
+    Top = 151
     Width = 530
     ButtonHeight = 62
     ButtonWidth = 74
@@ -97,11 +97,10 @@ inherited FrmCadastroMontadora: TFrmCadastroMontadora
     DataField = 'MON_COD'
     DataSource = DataSourceMain
     TabOrder = 0
-    OnExit = EvPesquisarMontadoraExit
   end
   object dbEditNome: TDBEdit [4]
     Left = 80
-    Top = 69
+    Top = 92
     Width = 435
     Height = 27
     CharCase = ecUpperCase

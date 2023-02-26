@@ -6,9 +6,20 @@ object dtmEstacionamento: TdtmEstacionamento
     Active = True
     Connection = cnxBaseestacionamento
     SQL.Strings = (
-      'SELECT MON_COD, MON_NOM FROM MONTADORA')
+      'SELECT MON_COD, '
+      '       MON_NOM '
+      'FROM MONTADORA'
+      '  WHERE MON_COD = :CODIGO;'
+      '')
     Left = 200
     Top = 24
+    ParamData = <
+      item
+        Name = 'CODIGO'
+        DataType = ftInteger
+        ParamType = ptInput
+        Value = Null
+      end>
     object qryMontadoraMON_COD: TIntegerField
       DisplayLabel = 'C'#243'digo'
       DisplayWidth = 5
@@ -204,6 +215,7 @@ object dtmEstacionamento: TdtmEstacionamento
     end
   end
   object qryConducao: TFDQuery
+    Active = True
     Connection = cnxBaseestacionamento
     SQL.Strings = (
       'SELECT CND_COD,'
@@ -236,6 +248,8 @@ object dtmEstacionamento: TdtmEstacionamento
     end
   end
   object qryTicket: TFDQuery
+    Active = True
+    OnNewRecord = EvAddDataHoraCorrenteNewRecord
     MasterSource = dtsConducaoTicketMD
     MasterFields = 'CND_COD'
     DetailFields = 'CND_COD'
@@ -250,7 +264,7 @@ object dtmEstacionamento: TdtmEstacionamento
       '       TIC_HOR_SAI,'
       '       TIC_VAL_PAG'
       'FROM TICKET '
-      'WHERE CND_COD = :CND_COD;')
+      ' WHERE CND_COD = :CND_COD;')
     Left = 664
     Top = 296
     ParamData = <
@@ -258,7 +272,7 @@ object dtmEstacionamento: TdtmEstacionamento
         Name = 'CND_COD'
         DataType = ftInteger
         ParamType = ptInput
-        Value = Null
+        Value = 1
       end>
     object qryTicketTIC_NUM: TIntegerField
       DisplayLabel = 'N'#250'mero'
@@ -272,7 +286,7 @@ object dtmEstacionamento: TdtmEstacionamento
     end
     object qryTicketCND_COD: TIntegerField
       DisplayLabel = 'Condu'#231#227'o'
-      DisplayWidth = 13
+      DisplayWidth = 7
       FieldName = 'CND_COD'
       Origin = 'CND_COD'
       Required = True
@@ -282,6 +296,7 @@ object dtmEstacionamento: TdtmEstacionamento
       DisplayWidth = 11
       FieldName = 'TIC_DAT'
       Origin = 'TIC_DAT'
+      DisplayFormat = 'dd/mm/yyyy'
       EditMask = '00/00/0000;1;_'
     end
     object qryTicketTIC_HOR_ENT: TSQLTimeStampField
@@ -289,18 +304,20 @@ object dtmEstacionamento: TdtmEstacionamento
       DisplayWidth = 10
       FieldName = 'TIC_HOR_ENT'
       Origin = 'TIC_HOR_ENT'
-      EditMask = '00:00:00;1;_'
+      DisplayFormat = 'hh:nn:ss'
+      EditMask = '00:00;1;_'
     end
     object qryTicketTIC_HOR_SAI: TSQLTimeStampField
-      DisplayLabel = 'SA'#204'DA'
+      DisplayLabel = 'Sa'#237'da'
       DisplayWidth = 10
       FieldName = 'TIC_HOR_SAI'
       Origin = 'TIC_HOR_SAI'
-      EditMask = '00:00:00;1;_'
+      DisplayFormat = 'hh:nn:ss'
+      EditMask = '00:00;1;_'
     end
     object qryTicketTIC_VAL_PAG: TBCDField
       DisplayLabel = 'Valor'
-      DisplayWidth = 19
+      DisplayWidth = 26
       FieldName = 'TIC_VAL_PAG'
       Origin = 'TIC_VAL_PAG'
       currency = True
