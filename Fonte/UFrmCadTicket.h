@@ -32,6 +32,7 @@
 #include <Vcl.DBCtrls.hpp>
 #include <Vcl.Mask.hpp>
 #include <Vcl.Menus.hpp>
+#include <Vcl.Buttons.hpp>
 //---------------------------------------------------------------------------
 class TFrmCadTicket : public TFrmModeloCadastroCRUD
 {
@@ -56,9 +57,11 @@ __published:	// IDE-managed Components
 	TDBEdit *dbeVeiculo;
 	TDBLookupComboBox *dblkCondutor;
 	TDBLookupComboBox *dblkVeiculo;
+	TBitBtn *btnHoraSaida;
 	void __fastcall EvAtualizarCondutor(TObject *Sender);
 	void __fastcall EvAtualizarVeiculo(TObject *Sender);
 	void __fastcall EvGravarConducao(TObject *Sender);
+	void __fastcall EvAddHoraAtualSaidaTicketSelecionado(TObject *Sender);
 private:	// User declarations
 public:		// User declarations
     __fastcall TFrmCadTicket(TComponent* Owner);

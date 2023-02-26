@@ -215,8 +215,8 @@ inherited FrmCadTicket: TFrmCadTicket
     end
   end
   object btnHoraSaida: TBitBtn [3]
-    Left = 345
-    Top = 161
+    Left = 177
+    Top = 151
     Width = 168
     Height = 25
     Hint = 'Adiciona a hora corrente no ticket selecionado.'
@@ -226,7 +226,6 @@ inherited FrmCadTicket: TFrmCadTicket
     ParentShowHint = False
     ShowHint = True
     TabOrder = 3
-    OnClick = EvAddHoraAtualSaidaTicketSelecionado
   end
   inherited ImgAtiva: TImageList
     Left = 413

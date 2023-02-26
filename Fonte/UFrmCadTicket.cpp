@@ -37,3 +37,10 @@ void __fastcall TFrmCadTicket::EvGravarConducao(TObject *Sender)
 }
 //---------------------------------------------------------------------------
 
+void __fastcall TFrmCadTicket::EvAddHoraAtualSaidaTicketSelecionado(TObject *Sender)
+
+{
+    dtmEstacionamento->AtribuirHoraSaidaTicket();
+}
+//---------------------------------------------------------------------------
+

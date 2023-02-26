@@ -62,14 +62,10 @@ void __fastcall TdtmEstacionamento::LimpaModeloVeiculo()
 void __fastcall TdtmEstacionamento::EvAddDataHoraCorrenteNewRecord(TDataSet *DataSet)
 
 {
-	qryTicketTIC_DAT->AsDateTime = Date();
-	qryTicketTIC_HOR_ENT->AsDateTime = Now();
+	qryTicketTIC_DAT->AsDate = Date();
+	/*TSQLTimeStampField *qryTicketTIC_DAT;
+	TSQLTimeStampField *qryTicketTIC_HOR_ENT;
+	TSQLTimeStampField *qryTicketTIC_HOR_SAI;*/
 }
 //---------------------------------------------------------------------------
 
-void __fastcall TdtmEstacionamento::AtribuirHoraSaidaTicket()
-{
-	qryTicket->Edit();
-    qryTicketTIC_HOR_SAI->AsDateTime = Now();
-}
-//---------------------------------------------------------------------------

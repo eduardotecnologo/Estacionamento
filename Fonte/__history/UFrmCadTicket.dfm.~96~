@@ -1,90 +1,29 @@
 inherited FrmCadTicket: TFrmCadTicket
   Caption = 'Cadastro de Ticket'
-  ClientHeight = 480
-  ClientWidth = 524
-  ExplicitWidth = 530
-  ExplicitHeight = 509
+  ClientHeight = 421
+  ClientWidth = 747
+  ExplicitWidth = 753
+  ExplicitHeight = 450
   PixelsPerInch = 96
   TextHeight = 19
   inherited tlbCadastroCRUD: TToolBar
-    Top = 415
-    Width = 524
-    ButtonHeight = 54
-    ButtonWidth = 75
-    ExplicitTop = 377
-    ExplicitWidth = 524
-    inherited btnNovo: TToolButton
-      ExplicitWidth = 75
-      ExplicitHeight = 54
-    end
-    inherited ToolButton5: TToolButton
-      Left = 75
-      ExplicitLeft = 75
-      ExplicitHeight = 54
-    end
-    inherited btnPesquisar: TToolButton
-      Left = 90
-      ExplicitLeft = 90
-      ExplicitWidth = 75
-      ExplicitHeight = 54
-    end
-    inherited ToolButton4: TToolButton
-      Left = 165
-      ExplicitLeft = 165
-      ExplicitHeight = 54
-    end
-    inherited btnUpdate: TToolButton
-      Left = 180
-      ExplicitLeft = 180
-      ExplicitWidth = 75
-      ExplicitHeight = 54
-    end
-    inherited ToolButton1: TToolButton [5]
-      Left = 255
-      ExplicitLeft = 255
-      ExplicitHeight = 54
-    end
-    inherited btnExcluir: TToolButton [6]
-      Left = 270
-      ExplicitLeft = 270
-      ExplicitWidth = 75
-      ExplicitHeight = 54
-    end
-    inherited ToolButton2: TToolButton
-      Left = 345
-      ExplicitLeft = 345
-      ExplicitHeight = 54
-    end
-    inherited bntCancelar: TToolButton
-      Left = 360
-      ExplicitLeft = 360
-      ExplicitWidth = 75
-      ExplicitHeight = 54
-    end
-    inherited ToolButton3: TToolButton
-      Left = 435
-      ExplicitLeft = 435
-      ExplicitHeight = 54
-    end
-    inherited btnSair: TToolButton
-      Left = 450
-      ExplicitLeft = 450
-      ExplicitWidth = 75
-      ExplicitHeight = 54
-    end
+    Top = 356
+    Width = 747
+    ExplicitTop = 356
+    ExplicitWidth = 747
   end
   object grbTicket: TGroupBox [1]
-    Left = 3
-    Top = 180
-    Width = 513
-    Height = 229
+    Left = 8
+    Top = 151
+    Width = 731
+    Height = 202
     Caption = '[Ticket]'
     TabOrder = 1
     object DBGrid1: TDBGrid
       Left = 2
       Top = 21
-      Width = 509
-      Height = 206
+      Width = 727
+      Height = 179
       Align = alClient
       DataSource = dtsTicket
       TabOrder = 0
@@ -124,7 +63,6 @@ inherited FrmCadTicket: TFrmCadTicket
         item
           Expanded = False
           FieldName = 'TIC_VAL_PAG'
-          Width = 103
           Visible = True
         end>
     end
@@ -132,7 +70,7 @@ inherited FrmCadTicket: TFrmCadTicket
   object grbConducao: TGroupBox [2]
     Left = 8
     Top = 8
-    Width = 726
+    Width = 731
     Height = 137
     Caption = '[Condu'#231#227'o]'
     TabOrder = 2
@@ -190,7 +128,7 @@ inherited FrmCadTicket: TFrmCadTicket
     object dblkCondutor: TDBLookupComboBox
       Left = 223
       Top = 63
-      Width = 276
+      Width = 234
       Height = 27
       DataField = 'CON_COD'
       DataSource = DataSourceMain
@@ -214,50 +152,32 @@ inherited FrmCadTicket: TFrmCadTicket
       TabOrder = 4
     end
   end
-  object btnHoraSaida: TBitBtn [3]
-    Left = 345
-    Top = 161
-    Width = 168
-    Height = 25
-    Hint = 'Adiciona a hora corrente no ticket selecionado.'
-    Caption = '&Hora Atual de Sa'#237'da'
-    Kind = bkRetry
-    NumGlyphs = 2
-    ParentShowHint = False
-    ShowHint = True
-    TabOrder = 3
-    OnClick = EvAddHoraAtualSaidaTicketSelecionado
-  end
   inherited ImgAtiva: TImageList
-    Left = 413
-    Top = 302
-  end
-  inherited ImgDesabilitado: TImageList
-    Left = 448
-    Top = 302
+    Left = 685
+    Top = 232
   end
   inherited ImgHot: TImageList
-    Left = 366
-    Top = 301
+    Left = 638
+    Top = 231
   end
   inherited DataSourceMain: TDataSource
     DataSet = dtmEstacionamento.qryConducao
-    Left = 421
-    Top = 238
+    Left = 573
+    Top = 232
   end
   inherited ActionListCRUD: TActionList
-    Left = 292
-    Top = 238
+    Left = 444
+    Top = 232
   end
   object dtsTicket: TDataSource
     DataSet = dtmEstacionamento.qryTicket
-    Left = 356
-    Top = 238
+    Left = 508
+    Top = 232
   end
   object dtsCondutorLK: TDataSource
     DataSet = qryCondutorLK
-    Left = 138
-    Top = 239
+    Left = 290
+    Top = 233
   end
   object qryCondutorLK: TFDQuery
     Active = True
@@ -268,13 +188,13 @@ inherited FrmCadTicket: TFrmCadTicket
       '    CON_NOM '
       'FROM CONDUTOR'
       'ORDER BY CON_NOM;')
-    Left = 139
-    Top = 295
+    Left = 291
+    Top = 289
   end
   object dtsVeiculoLK: TDataSource
     DataSet = qryVeiculoLK
-    Left = 215
-    Top = 238
+    Left = 367
+    Top = 232
   end
   object qryVeiculoLK: TFDQuery
     Active = True
@@ -284,20 +204,20 @@ inherited FrmCadTicket: TFrmCadTicket
       '       VEI_PLA'
       'FROM VEICULO'
       'ORDER BY VEI_PLA;')
-    Left = 216
-    Top = 294
+    Left = 368
+    Top = 288
   end
   object ppmCondutor: TPopupMenu
-    Left = 53
-    Top = 242
+    Left = 205
+    Top = 236
     object AtualizarCondutor1: TMenuItem
       Caption = 'Atualizar Condutor'
       OnClick = EvAtualizarCondutor
     end
   end
   object ppmVeiculo: TPopupMenu
-    Left = 54
-    Top = 292
+    Left = 206
+    Top = 286
     object AtualizaVeculo1: TMenuItem
       Caption = 'Atualiza Ve'#237'culo'
       OnClick = EvAtualizarVeiculo

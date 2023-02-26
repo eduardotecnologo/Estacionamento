@@ -238,6 +238,7 @@ object dtmEstacionamento: TdtmEstacionamento
   end
   object qryTicket: TFDQuery
     Active = True
+    OnNewRecord = EvAddDataHoraCorrenteNewRecord
     MasterSource = dtsConducaoTicketMD
     MasterFields = 'CND_COD'
     DetailFields = 'CND_COD'
@@ -260,7 +261,7 @@ object dtmEstacionamento: TdtmEstacionamento
         Name = 'CND_COD'
         DataType = ftInteger
         ParamType = ptInput
-        Value = Null
+        Value = 1
       end>
     object qryTicketTIC_NUM: TIntegerField
       DisplayLabel = 'N'#250'mero'
@@ -284,6 +285,7 @@ object dtmEstacionamento: TdtmEstacionamento
       DisplayWidth = 11
       FieldName = 'TIC_DAT'
       Origin = 'TIC_DAT'
+      DisplayFormat = 'dd/mm/yyyy'
       EditMask = '00/00/0000;1;_'
     end
     object qryTicketTIC_HOR_ENT: TSQLTimeStampField
@@ -291,6 +293,7 @@ object dtmEstacionamento: TdtmEstacionamento
       DisplayWidth = 10
       FieldName = 'TIC_HOR_ENT'
       Origin = 'TIC_HOR_ENT'
+      DisplayFormat = 'hh:nn:ss'
       EditMask = '00:00;1;_'
     end
     object qryTicketTIC_HOR_SAI: TSQLTimeStampField
@@ -298,6 +301,7 @@ object dtmEstacionamento: TdtmEstacionamento
       DisplayWidth = 10
       FieldName = 'TIC_HOR_SAI'
       Origin = 'TIC_HOR_SAI'
+      DisplayFormat = 'hh:nn:ss'
       EditMask = '00:00;1;_'
     end
     object qryTicketTIC_VAL_PAG: TBCDField

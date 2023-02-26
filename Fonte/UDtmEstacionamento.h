@@ -60,12 +60,13 @@ __published:	// IDE-managed Components
     TFDQuery *qryTicket;
     TIntegerField *qryTicketTIC_NUM;
     TIntegerField *qryTicketCND_COD;
-    TSQLTimeStampField *qryTicketTIC_DAT;
-    TSQLTimeStampField *qryTicketTIC_HOR_ENT;
-    TSQLTimeStampField *qryTicketTIC_HOR_SAI;
-    TBCDField *qryTicketTIC_VAL_PAG;
+	TSQLTimeStampField *qryTicketTIC_DAT;
+	TSQLTimeStampField *qryTicketTIC_HOR_ENT;
+	TSQLTimeStampField *qryTicketTIC_HOR_SAI;
+	TBCDField *qryTicketTIC_VAL_PAG;
     TDataSource *dtsConducaoTicketMD;
 	TFDConnection *cnxBaseestacionamento;
+	void __fastcall EvAddDataHoraCorrenteNewRecord(TDataSet *DataSet);
 private:	// User declarations
 public:		// User declarations
 
@@ -76,7 +77,8 @@ public:		// User declarations
 	void __fastcall ConfigureLookUp(TFDQuery* AQuery);
     void __fastcall AtualizaLookUp(TFDQuery* AQuery);
 	void __fastcall LimpaModeloVeiculo();
-    void __fastcall GraveConducao();
+	void __fastcall GraveConducao();
+	void __fastcall AtribuirHoraSaidaTicket();
 };
 //---------------------------------------------------------------------------
 extern PACKAGE TdtmEstacionamento *dtmEstacionamento;
